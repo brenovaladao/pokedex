@@ -18,9 +18,7 @@ final class SearchStore: ObservableObject, SearchStoring {
     func fetchRandomPokemon() {
         let pokemonId = generateRandomPokemonId
         let searchPokemonUrl = Configuration.default.apiBaseURL.appendingPathComponent("pokemon/\(pokemonId)")
-        
-        print("🧑🏼‍💻 loading id \(pokemonId)")
-        
+                
         apiManager.fetch(url: searchPokemonUrl)
             .decode(type: APIPokemon.self, decoder: apiManager.decoder)
             .receive(on: DispatchQueue.main)
