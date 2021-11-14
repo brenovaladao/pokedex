@@ -8,5 +8,5 @@
 import Foundation
 
 struct Sprite: Decodable {
-    let frontDefault: String
+    let frontDefault: URL
 }

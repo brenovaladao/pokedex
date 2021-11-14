@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct PokedexApp: App {
+    
+    private let container = DIContainer()
+    
+    @StateObject private var searchStore = SearchStore()
+    @StateObject private var backpackStore = BackpackStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+            .environmentObject(searchStore)
+            .environmentObject(backpackStore)
         }
     }
 }

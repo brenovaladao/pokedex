@@ -9,4 +9,6 @@ import Foundation
 
 protocol SearchStoring {
     func fetchRandomPokemon()
+    
+    func captureCurrentPokemon()
 }

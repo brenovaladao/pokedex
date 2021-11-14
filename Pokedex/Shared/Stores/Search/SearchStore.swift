@@ -31,6 +31,13 @@ final class SearchStore: ObservableObject, SearchStoring {
             .assign(to: \.state, on: self)
             .store(in: &cancellables)
     }
+    
+    func captureCurrentPokemon() {
+        guard let pokemon = state.pokemon else {
+            return
+        }
+        print("👾 capturing pokemon \(pokemon.name)")
+    }
 }
 
 // MARK: - Helpers

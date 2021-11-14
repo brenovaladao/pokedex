@@ -21,6 +21,13 @@ extension SearchStore {
             self.error = error
         }
         
+        var pokemon: Pokemon? {
+            if case let .pokemon(pokemon) = loaded {
+                return pokemon
+            }
+            return nil
+        }
+        
         var isEmpty: Bool {
             if case .empty = loaded {
                 return true

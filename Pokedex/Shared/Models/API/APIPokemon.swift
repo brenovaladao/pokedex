@@ -17,6 +17,12 @@ struct APIPokemon: Decodable {
 
 extension APIPokemon {
     var pokemonValue: Pokemon {
-        Pokemon()
+        Pokemon(
+            id: id,
+            name: name,
+            height: height,
+            weight: weight,
+            imageURL: sprites.map(\.frontDefault).first!
+        )
     }
 }

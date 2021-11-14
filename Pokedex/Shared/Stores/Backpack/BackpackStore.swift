@@ -8,6 +8,6 @@
 import Foundation
 import Combine
 
-final class BackpackStore: ObservableObject, BackpackStoring {
+final class BackpackStore: ObservableObject {
     
 }
