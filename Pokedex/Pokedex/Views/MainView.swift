@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selection: Tab = .search
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             SearchView()
             .tabItem {
                 Image(systemName: "magnifyingglass")
                 Text("Search")
             }
+            .tag(Tab.search)
             NavigationView {
-                BackpackView()
+                BackpackView(switchTabHandler: switchToSearchTab)
                     .navigationTitle("Backpack")
                     .navigationBarTitleDisplayMode(.inline)
             }
@@ -24,7 +27,24 @@ struct MainView: View {
                 Image(systemName: "bag")
                 Text("Backpack")
             }
+            .tag(Tab.backpack)
         }
+    }
+}
+
+// MARK: - Actions
+
+private extension MainView {
+    func switchToSearchTab() {
+        selection = .search
+    }
+}
+
+// MARK: - Tabs
+private extension MainView {
+    enum Tab: Int {
+        case search
+        case backpack
     }
 }
 

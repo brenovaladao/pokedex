@@ -11,6 +11,7 @@ struct BackpackView: View {
     @EnvironmentObject var backpackStore: BackpackStore
 
     private let columns = [GridItem(.adaptive(minimum: 80))]
+    let switchTabHandler: TapHandler
     
     var body: some View {
         Group {
@@ -50,12 +51,12 @@ struct BackpackView: View {
 
 extension BackpackView {
     func navigateToSearchPokemonsView() {
-        
+        switchTabHandler()
     }
 }
 
 struct BackpackView_Previews: PreviewProvider {
     static var previews: some View {
-        BackpackView()
+        BackpackView(switchTabHandler: {})
     }
 }
