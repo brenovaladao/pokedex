@@ -10,8 +10,9 @@ import Combine
 
 final class SearchStore: ObservableObject, SearchStoring {
     @Injected private var apiManager: APIManaging
-    @Published var state: State = State(loaded: .empty)
-
+//    @Published var state: State = State(loaded: .empty)
+    @Published var state: State = State(loaded: .pokemon(Pokemon.sample))
+    
     private var cancellables = [AnyCancellable]()
 
     func fetchRandomPokemon() {

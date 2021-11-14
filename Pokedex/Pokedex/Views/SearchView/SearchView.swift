@@ -11,15 +11,31 @@ struct SearchView: View {
     @EnvironmentObject var searchStore: SearchStore
 
     var body: some View {
-        PokemonInfoView(pokemon: Pokemon.sample)
-//        Group {
-//            switch searchStore.state.loaded {
-//            case .empty:
-//                Text("Empty")
-//            case let pokemon(pokemon):
-//                PokemonInfoView(pokemon: pokemon)
-//            }
-//        }
+        Group {
+            switch searchStore.state.loaded {
+            case .empty:
+                Text("Empty")
+                
+            case let .pokemon(pokemon):
+                VStack {
+                    PokemonInfoView(pokemon: pokemon)
+
+                    HStack(alignment: .center, spacing: 8) {
+
+                        CaptureOptionItemView(
+                            title: "Leave",
+                            backgroundColor: .blue) {
+                                letPokemonLeave()
+                            }
+                        CaptureOptionItemView(
+                            title: "Catch!",
+                            backgroundColor: .red) {
+                                capturePokemon()
+                            }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -42,5 +58,6 @@ extension SearchView {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
+            .environmentObject(SearchStore())
     }
 }
