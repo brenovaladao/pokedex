@@ -1,0 +1,12 @@
+//
+//  Debug.xcconfig
+//  Pokedex
+//
+//  Created by Breno Valadão on 14/11/21.
+//
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_BUNDLE_NAME = Pokedex
+IOS_BUNDLE_IDENTIFIER = com.brenovaladao.Pokedex
+API_BASE_URL = https:/$()/pokeapi.co/api/v2/
