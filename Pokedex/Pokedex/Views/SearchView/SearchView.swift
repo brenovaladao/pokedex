@@ -12,11 +12,15 @@ struct SearchView: View {
 
     var body: some View {
         Group {
-            switch searchStore.state.loaded {
-            case .empty:
-                Text("Empty")
+            switch searchStore.state {
+            case .initial:
+                EmptyView(
+                    title: "Search for a Pokémon!",
+                    buttonTitle: "Search") {
+                        fetchRamdonPokemon()
+                    }
                 
-            case let .pokemon(pokemon):
+            case let .loaded(pokemon):
                 VStack {
                     PokemonInfoView(pokemon: pokemon)
 
@@ -34,6 +38,13 @@ struct SearchView: View {
                             }
                     }
                 }
+                
+            case .failure:
+                EmptyView(
+                    title: "No Pokémon found",
+                    buttonTitle: "Try again") {
+                        fetchRamdonPokemon()
+                    }
             }
         }
     }

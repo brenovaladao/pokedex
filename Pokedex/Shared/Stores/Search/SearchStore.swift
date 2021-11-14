@@ -10,8 +10,7 @@ import Combine
 
 final class SearchStore: ObservableObject, SearchStoring {
     @Injected private var apiManager: APIManaging
-//    @Published var state: State = State(loaded: .empty)
-    @Published var state: State = State(loaded: .pokemon(Pokemon.sample))
+    @Published var state: State = .initial
     
     private var cancellables = [AnyCancellable]()
 
@@ -23,10 +22,10 @@ final class SearchStore: ObservableObject, SearchStoring {
             .decode(type: APIPokemon.self, decoder: apiManager.decoder)
             .receive(on: DispatchQueue.main)
             .map { receivedPokemon -> State in
-                State(loaded: .pokemon(receivedPokemon.pokemonValue))
+                .loaded(receivedPokemon.pokemonValue)
             }
             .catch { error -> AnyPublisher<State, Never> in
-                Just(State(loaded: .empty, error: SearchError.errorRetrievingRandomPokemon))
+                Just(.failure(SearchError.errorRetrievingRandomPokemon))
                     .eraseToAnyPublisher()
             }
             .assign(to: \.state, on: self)
@@ -34,10 +33,19 @@ final class SearchStore: ObservableObject, SearchStoring {
     }
     
     func captureCurrentPokemon() {
-        guard let pokemon = state.pokemon else {
+        guard case let .loaded(pokemon) = state else {
             return
         }
         print("👾 capturing pokemon \(pokemon.name)")
+    }
+}
+
+// MARK: - State
+extension SearchStore {
+    enum State {
+        case initial
+        case loaded(Pokemon)
+        case failure(Error)
     }
 }
 
