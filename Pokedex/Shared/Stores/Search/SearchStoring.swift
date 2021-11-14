@@ -10,5 +10,7 @@ import Foundation
 protocol SearchStoring {
     func fetchRandomPokemon()
     
+    func setInitialState()
+    
     func captureCurrentPokemon()
 }

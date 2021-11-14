@@ -34,6 +34,10 @@ final class SearchStore: ObservableObject, SearchStoring {
             .store(in: &cancellables)
     }
     
+    func setInitialState() {
+        state = .initial
+    }
+    
     func captureCurrentPokemon() {
         guard case let .loaded(pokemon) = state else {
             return

@@ -15,8 +15,8 @@ struct SearchView: View {
             switch searchStore.state {
             case .initial:
                 EmptyView(
-                    title: "Search for a Pokémon!",
-                    buttonTitle: "Search") {
+                    title: "Let's find them all!",
+                    buttonTitle: "Search for Pokémon") {
                         fetchRamdonPokemon()
                     }
                 
@@ -29,7 +29,7 @@ struct SearchView: View {
                         CaptureOptionView(
                             title: "Leave",
                             backgroundColor: .blue) {
-                                letPokemonLeave()
+                                leavePokemon()
                             }
                         CaptureOptionView(
                             title: "Catch!",
@@ -43,7 +43,7 @@ struct SearchView: View {
                 PokemonCapturedView(
                     pokemon: pokemon,
                     onTap: {
-                        fetchRamdonPokemon()
+                        pokemonCapturedConfirmAction()
                     })
                 
             case .failure:
@@ -65,10 +65,14 @@ extension SearchView {
         searchStore.fetchRandomPokemon()
     }
 
-    func letPokemonLeave() {
-        searchStore.fetchRandomPokemon()
+    func leavePokemon() {
+        searchStore.setInitialState()
     }
-
+    
+    func pokemonCapturedConfirmAction() {
+        searchStore.setInitialState()
+    }
+    
     func capturePokemon() {
         searchStore.captureCurrentPokemon()
     }

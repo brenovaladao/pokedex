@@ -25,7 +25,7 @@ struct PokemonCapturedView: View {
             .padding()
             
             Button(action: onTap) {
-                Text("Search more Pokémons")
+                Text("OK")
                     .padding([.top, .bottom], 12)
                     .padding([.leading, .trailing], 22)
                     .foregroundColor(.white)
