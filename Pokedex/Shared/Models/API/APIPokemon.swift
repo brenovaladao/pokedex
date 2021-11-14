@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct APIPokemon {
-    
+struct APIPokemon: Decodable {
+    let id: String
+    let name: String
+    let height: Int
+    let weight: Int
+    let sprites: [Sprite]
 }
