@@ -48,5 +48,9 @@ private extension DIContainer {
         register(APIManaging.self, cached: true) {
             APIManager()
         }
+        
+        register(CacheManaging.self, cached: true) {
+            CacheManager(userDefaults: .standard)
+        }
     }
 }

@@ -12,8 +12,10 @@ import Foundation
 public struct Configuration: Decodable {
     private enum CodingKeys: String, CodingKey {
         case apiBaseURL = "API_BASE_URL"
+        case capturedPokemonsCacheKey = "CAPUTURED_POKEMONS_CACHE_KEY"
     }
     public let apiBaseURL: URL
+    public let capturedPokemonsCacheKey: String
 }
 
 // MARK: Static properties

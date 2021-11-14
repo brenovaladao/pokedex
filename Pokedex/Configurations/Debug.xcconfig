@@ -10,3 +10,4 @@
 APP_BUNDLE_NAME = Pokedex
 IOS_BUNDLE_IDENTIFIER = com.brenovaladao.Pokedex
 API_BASE_URL = https:/$()/pokeapi.co/api/v2/
+CAPUTURED_POKEMONS_CACHE_KEY = captured_pokemons_cache_key

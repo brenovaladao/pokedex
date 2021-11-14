@@ -47,6 +47,8 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>API_BASE_URL</key>
 	<string>$(API_BASE_URL)</string>
+	<key>CAPUTURED_POKEMONS_CACHE_KEY</key>
+	<string>$(CAPUTURED_POKEMONS_CACHE_KEY)</string>
 	<key>CFBundleDisplayName</key>
 	<string>$(APP_BUNDLE_NAME)</string>
 </dict>

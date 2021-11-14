@@ -10,6 +10,8 @@ import Combine
 
 final class SearchStore: ObservableObject, SearchStoring {
     @Injected private var apiManager: APIManaging
+    @Injected private var cacheManager: CacheManaging
+    
     @Published var state: State = .initial
     
     private var cancellables = [AnyCancellable]()
@@ -36,7 +38,14 @@ final class SearchStore: ObservableObject, SearchStoring {
         guard case let .loaded(pokemon) = state else {
             return
         }
-        print("👾 capturing pokemon \(pokemon.name)")
+        
+        let cachePokemon = CachePokemon(pokemon: pokemon)
+        
+        do {
+            try cacheManager.savePokemon(cachePokemon)
+        } catch {
+            state = .failure(SearchError.errorCapturingPokemon)
+        }
     }
 }
 
@@ -45,7 +54,7 @@ extension SearchStore {
     enum State {
         case initial
         case loaded(Pokemon)
-        case failure(Error)
+        case failure(SearchError)
     }
 }
 
@@ -62,6 +71,7 @@ private extension SearchStore {
 extension SearchStore {
     enum SearchError: Error {
         case errorRetrievingRandomPokemon
+        case errorCapturingPokemon
     }
 }
 
