@@ -39,6 +39,13 @@ struct SearchView: View {
                     }
                 }
                 
+            case let .captured(pokemon):
+                PokemonCapturedView(
+                    pokemon: pokemon,
+                    onTap: {
+                        fetchRamdonPokemon()
+                    })
+                
             case .failure:
                 // TODO: handle error
                 EmptyView(

@@ -39,6 +39,8 @@ final class SearchStore: ObservableObject, SearchStoring {
             return
         }
         
+        state = .captured(pokemon)
+        
         let cachePokemon = CachePokemon(pokemon: pokemon)
         
         do {
@@ -54,6 +56,7 @@ extension SearchStore {
     enum State {
         case initial
         case loaded(Pokemon)
+        case captured(Pokemon)
         case failure(SearchError)
     }
 }

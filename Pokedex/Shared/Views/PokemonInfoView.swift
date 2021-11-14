@@ -15,7 +15,7 @@ struct PokemonInfoView: View {
             AsyncImage(url: pokemon.imageURL) { image in
                 image.resizable()
             } placeholder: {
-                Text("Loading...")
+                Text("...")
             }
             .frame(width: 130, height: 130)
             
