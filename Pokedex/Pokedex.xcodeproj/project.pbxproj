@@ -22,6 +22,7 @@
 		4040B922274118A20000A8B4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B921274118A20000A8B4 /* DIContainer.swift */; };
 		4040B924274118AC0000A8B4 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B923274118AC0000A8B4 /* Injected.swift */; };
 		4040B92727411A520000A8B4 /* APISprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92627411A520000A8B4 /* APISprite.swift */; };
+		4040B92C27411EED0000A8B4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92B27411EED0000A8B4 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		4040B921274118A20000A8B4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		4040B923274118AC0000A8B4 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		4040B92627411A520000A8B4 /* APISprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISprite.swift; sourceTree = "<group>"; };
+		4040B92A27411E4D0000A8B4 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		4040B92B27411EED0000A8B4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 		4040B8E8274111C20000A8B4 = {
 			isa = PBXGroup;
 			children = (
+				4040B92827411E250000A8B4 /* Configurations */,
 				4040B902274114130000A8B4 /* Shared */,
 				4040B8F3274111C20000A8B4 /* Pokedex */,
 				4040B8F2274111C20000A8B4 /* Products */,
@@ -180,6 +184,15 @@
 			path = "Dependency Injection";
 			sourceTree = "<group>";
 		};
+		4040B92827411E250000A8B4 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				4040B92A27411E4D0000A8B4 /* Production.xcconfig */,
+				4040B92B27411EED0000A8B4 /* Configuration.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4040B92C27411EED0000A8B4 /* Configuration.swift in Sources */,
 				4040B90A274115320000A8B4 /* APIManager.swift in Sources */,
 				4040B922274118A20000A8B4 /* DIContainer.swift in Sources */,
 				4040B912274117260000A8B4 /* BackpackStore.swift in Sources */,
