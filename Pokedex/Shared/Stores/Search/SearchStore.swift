@@ -27,7 +27,7 @@ final class SearchStore: ObservableObject, SearchStoring {
                 .loaded(receivedPokemon.pokemonValue)
             }
             .catch { error -> AnyPublisher<State, Never> in
-                Just(.failure(SearchError.errorRetrievingRandomPokemon))
+                Just(.failure(.errorRetrievingRandomPokemon))
                     .eraseToAnyPublisher()
             }
             .assign(to: \.state, on: self)
@@ -44,7 +44,7 @@ final class SearchStore: ObservableObject, SearchStoring {
         do {
             try cacheManager.savePokemon(cachePokemon)
         } catch {
-            state = .failure(SearchError.errorCapturingPokemon)
+            state = .failure(.errorCapturingPokemon)
         }
     }
 }

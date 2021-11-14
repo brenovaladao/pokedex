@@ -16,6 +16,9 @@ struct MainView: View {
                 Text("Search")
             }
             NavigationView {
+                BackpackView()
+                    .navigationTitle("Backpack")
+                    .navigationBarTitleDisplayMode(.inline)
             }
             .tabItem {
                 Image(systemName: "bag")

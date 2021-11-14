@@ -26,12 +26,12 @@ struct SearchView: View {
 
                     HStack(alignment: .center, spacing: 8) {
 
-                        CaptureOptionItemView(
+                        CaptureOptionView(
                             title: "Leave",
                             backgroundColor: .blue) {
                                 letPokemonLeave()
                             }
-                        CaptureOptionItemView(
+                        CaptureOptionView(
                             title: "Catch!",
                             backgroundColor: .red) {
                                 capturePokemon()
@@ -40,6 +40,7 @@ struct SearchView: View {
                 }
                 
             case .failure:
+                // TODO: handle error
                 EmptyView(
                     title: "No Pokémon found",
                     buttonTitle: "Try again") {

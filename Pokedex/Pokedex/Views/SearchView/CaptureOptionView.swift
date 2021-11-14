@@ -1,5 +1,5 @@
 //
-//  CaptureOptionItemView.swift
+//  CaptureOptionView.swift
 //  Pokedex
 //
 //  Created by Breno Valadão on 14/11/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CaptureOptionItemView: View {
+struct CaptureOptionView: View {
     let title: String
     let backgroundColor: Color
     var onTap: TapHandler
@@ -28,7 +28,7 @@ struct CaptureOptionItemView: View {
 
 struct CaptureBar_Previews: PreviewProvider {
     static var previews: some View {
-        CaptureOptionItemView(
+        CaptureOptionView(
             title: "Catch!",
             backgroundColor: .red,
             onTap: {}
