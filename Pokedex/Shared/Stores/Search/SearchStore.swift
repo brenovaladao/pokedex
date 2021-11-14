@@ -23,8 +23,14 @@ final class SearchStore: ObservableObject, SearchStoring {
         apiManager.fetch(url: searchPokemonUrl)
             .decode(type: APIPokemon.self, decoder: apiManager.decoder)
             .receive(on: DispatchQueue.main)
-            .map { receivedPokemon -> State in
-                .loaded(receivedPokemon.pokemonValue)
+            .compactMap { [weak self] receivedPokemon -> State? in
+                guard let self = self else {
+                    return nil
+                }
+                return .loaded(
+                    receivedPokemon.pokemonValue,
+                    isAlreadyCaptured: self.cacheManager.pokemonAlreadyCaptured(pokemonId: receivedPokemon.id)
+                )
             }
             .catch { error -> AnyPublisher<State, Never> in
                 Just(.failure(.errorRetrievingRandomPokemon))
@@ -39,7 +45,7 @@ final class SearchStore: ObservableObject, SearchStoring {
     }
     
     func captureCurrentPokemon() {
-        guard case let .loaded(pokemon) = state else {
+        guard case let .loaded(pokemon, _) = state else {
             return
         }
         
@@ -59,7 +65,7 @@ final class SearchStore: ObservableObject, SearchStoring {
 extension SearchStore {
     enum State {
         case initial
-        case loaded(Pokemon)
+        case loaded(Pokemon, isAlreadyCaptured: Bool)
         case captured(Pokemon)
         case failure(SearchError)
     }

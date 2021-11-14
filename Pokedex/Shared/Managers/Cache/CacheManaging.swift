@@ -11,4 +11,6 @@ protocol CacheManaging: AnyObject {
     func savePokemon(_ pokemon: CachePokemon) throws
     
     func fetchPokemons() throws -> [CachePokemon]
+    
+    func pokemonAlreadyCaptured(pokemonId: Int) -> Bool
 }

@@ -20,7 +20,7 @@ struct SearchView: View {
                         fetchRamdonPokemon()
                     }
                 
-            case let .loaded(pokemon):
+            case let .loaded(pokemon, isAlreadyCaptured):
                 VStack {
                     PokemonInfoView(pokemon: pokemon)
 
@@ -32,9 +32,11 @@ struct SearchView: View {
                                 leavePokemon()
                             }
                         CaptureOptionView(
-                            title: "Catch!",
-                            backgroundColor: .red) {
-                                capturePokemon()
+                            title: isAlreadyCaptured ? "Already Captured" : "Catch!",
+                            backgroundColor: .red.opacity(isAlreadyCaptured ? 0.3: 1)) {
+                                if !isAlreadyCaptured {
+                                    capturePokemon()
+                                }
                             }
                     }
                 }

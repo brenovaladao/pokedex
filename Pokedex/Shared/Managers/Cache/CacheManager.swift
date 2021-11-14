@@ -40,4 +40,10 @@ final class CacheManager: CacheManaging {
         cachedPokemons = decodedPokemons
         return cachedPokemons
     }
+    
+    func pokemonAlreadyCaptured(pokemonId: Int) -> Bool {
+        cachedPokemons
+            .map(\.id)
+            .contains(pokemonId)
+    }
 }
