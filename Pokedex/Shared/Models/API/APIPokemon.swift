@@ -14,3 +14,9 @@ struct APIPokemon: Decodable {
     let weight: Int
     let sprites: [Sprite]
 }
+
+extension APIPokemon {
+    var pokemonValue: Pokemon {
+        Pokemon()
+    }
+}

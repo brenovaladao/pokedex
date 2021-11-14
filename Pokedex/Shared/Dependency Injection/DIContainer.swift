@@ -45,6 +45,8 @@ final class DIContainer {
 
 private extension DIContainer {
     func registerDependencies() {
-        
+        register(APIManaging.self, cached: true) {
+            APIManager()
+        }
     }
 }
