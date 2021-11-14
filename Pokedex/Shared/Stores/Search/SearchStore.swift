@@ -19,13 +19,15 @@ final class SearchStore: ObservableObject, SearchStoring {
         let pokemonId = generateRandomPokemonId
         let searchPokemonUrl = Configuration.default.apiBaseURL.appendingPathComponent("pokemon/\(pokemonId)")
         
+        print("🧑🏼‍💻 loading id \(pokemonId)")
+        
         apiManager.fetch(url: searchPokemonUrl)
             .decode(type: APIPokemon.self, decoder: apiManager.decoder)
             .receive(on: DispatchQueue.main)
             .map { receivedPokemon -> State in
                 State(loaded: .pokemon(receivedPokemon.pokemonValue))
             }
-            .catch { _ -> AnyPublisher<State, Never> in
+            .catch { error -> AnyPublisher<State, Never> in
                 Just(State(loaded: .empty, error: SearchError.errorRetrievingRandomPokemon))
                     .eraseToAnyPublisher()
             }
