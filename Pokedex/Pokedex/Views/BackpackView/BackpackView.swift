@@ -27,7 +27,7 @@ struct BackpackView: View {
                         columns: columns,
                         spacing: 8) {
                             ForEach(pokemons) { pokemon in
-                                Text(pokemon.name)
+                                PokemonListItem(pokemon: pokemon)
                             }
                         }
                 }
