@@ -8,7 +8,7 @@
 import Foundation
 
 struct APIPokemon: Decodable {
-    let id: String
+    let id: Int
     let name: String
     let height: Int
     let weight: Int

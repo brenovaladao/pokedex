@@ -8,9 +8,23 @@
 import Foundation
 
 struct Pokemon {
-    let id: String
+    let id: Int
     let name: String
     let height: Int
     let weight: Int
     let imageURL: URL
+    
+    var displayName: String {
+        name.capitalized
+    }
+    
+    // The height of this Pokémon in centimeter.
+    var displayHeightInCentimeters: String {
+        "\(height * 10) cm"
+    }
+    
+    // The weight of this Pokémon in kilos.
+    var displayWeightInKilos: String {
+        "\(weight / 10) kg"
+    }
 }

@@ -11,7 +11,15 @@ struct SearchView: View {
     @EnvironmentObject var searchStore: SearchStore
 
     var body: some View {
-        Text("Search")
+        PokemonInfoView(pokemon: Pokemon.sample)
+//        Group {
+//            switch searchStore.state.loaded {
+//            case .empty:
+//                Text("Empty")
+//            case let pokemon(pokemon):
+//                PokemonInfoView(pokemon: pokemon)
+//            }
+//        }
     }
 }
 
