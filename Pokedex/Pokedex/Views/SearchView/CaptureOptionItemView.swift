@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct CaptureOptionItemView: View {
-    typealias TapHandler = () -> Void
-
     let title: String
     let backgroundColor: Color
     var onTap: TapHandler
@@ -23,7 +21,7 @@ struct CaptureOptionItemView: View {
                 .font(.buttonTitle)
         }
         .buttonStyle(
-            CaptureOptionStyle(backgroundColor: backgroundColor)
+            FilledButtonStyle(backgroundColor: backgroundColor)
         )
     }
 }
@@ -33,6 +31,7 @@ struct CaptureBar_Previews: PreviewProvider {
         CaptureOptionItemView(
             title: "Catch!",
             backgroundColor: .red,
-            onTap: {})
+            onTap: {}
+        )
     }
 }
