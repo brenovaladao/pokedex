@@ -19,6 +19,8 @@
 		4040B919274117E60000A8B4 /* SearchStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B918274117E60000A8B4 /* SearchStoring.swift */; };
 		4040B91D274118320000A8B4 /* APIPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B91C274118320000A8B4 /* APIPokemon.swift */; };
 		4040B91F274118460000A8B4 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B91E274118460000A8B4 /* Pokemon.swift */; };
+		4040B922274118A20000A8B4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B921274118A20000A8B4 /* DIContainer.swift */; };
+		4040B924274118AC0000A8B4 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B923274118AC0000A8B4 /* Injected.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		4040B918274117E60000A8B4 /* SearchStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStoring.swift; sourceTree = "<group>"; };
 		4040B91C274118320000A8B4 /* APIPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPokemon.swift; sourceTree = "<group>"; };
 		4040B91E274118460000A8B4 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		4040B921274118A20000A8B4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		4040B923274118AC0000A8B4 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		4040B902274114130000A8B4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4040B920274118880000A8B4 /* Dependency Injection */,
 				4040B91A274118030000A8B4 /* Models */,
 				4040B90E274116DA0000A8B4 /* Stores */,
 				4040B9072741151F0000A8B4 /* Managers */,
@@ -163,6 +168,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		4040B920274118880000A8B4 /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				4040B921274118A20000A8B4 /* DIContainer.swift */,
+				4040B923274118AC0000A8B4 /* Injected.swift */,
+			);
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4040B90A274115320000A8B4 /* APIManager.swift in Sources */,
+				4040B922274118A20000A8B4 /* DIContainer.swift in Sources */,
 				4040B912274117260000A8B4 /* BackpackStore.swift in Sources */,
 				4040B919274117E60000A8B4 /* SearchStoring.swift in Sources */,
 				4040B917274117C50000A8B4 /* BackpackStoring.swift in Sources */,
@@ -243,6 +258,7 @@
 				4040B91D274118320000A8B4 /* APIPokemon.swift in Sources */,
 				4040B8F5274111C20000A8B4 /* PokedexApp.swift in Sources */,
 				4040B910274117070000A8B4 /* SearchStore.swift in Sources */,
+				4040B924274118AC0000A8B4 /* Injected.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
