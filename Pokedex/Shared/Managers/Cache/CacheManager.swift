@@ -17,6 +17,7 @@ final class CacheManager: CacheManaging {
 
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
+        cachedPokemons = (try? fetchPokemons()) ?? []
     }
     
     func savePokemon(_ pokemon: CachePokemon) throws {
