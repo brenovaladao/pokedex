@@ -12,7 +12,12 @@ struct PokemonDetail: View {
     let pokemon: Pokemon
     
     var body: some View {
-        Text(pokemon.name)
+        VStack(alignment: .leading, spacing: 8) {
+            PokemonImage(url: pokemon.imageURL)
+            Text("Name: \(pokemon.displayName)")
+            Text("Height: \(pokemon.displayHeightInCentimeters)")
+            Text("Weight: \(pokemon.displayWeightInKilos)")
+        }
     }
 }
 

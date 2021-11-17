@@ -14,6 +14,8 @@ struct APIPokemon: Decodable {
     let weight: Int
     let sprites: Sprite
     let order: Int
+    let baseExperience: Int
+    let types: [APIPokemonType]
 }
 
 extension APIPokemon {
@@ -24,7 +26,9 @@ extension APIPokemon {
             height: height,
             weight: weight,
             imageURL: sprites.frontDefault,
-            order: order
+            order: order,
+            types: types.map { PokemonType(name: $0.name) },
+            captureDate: nil
         )
     }
 }

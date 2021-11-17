@@ -14,6 +14,8 @@ struct Pokemon: Identifiable {
     let weight: Int
     let imageURL: URL
     let order: Int
+    let types: [PokemonType]
+    let captureDate: Date?
     
     var displayName: String {
         name.capitalized

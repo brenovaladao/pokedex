@@ -51,7 +51,7 @@ final class SearchStore: ObservableObject, SearchStoring {
         
         state = .captured(pokemon)
         
-        let cachePokemon = CachePokemon(pokemon: pokemon)
+        let cachePokemon = CachePokemon(pokemon: pokemon, captureDate: Date())
         
         do {
             try cacheManager.savePokemon(cachePokemon)

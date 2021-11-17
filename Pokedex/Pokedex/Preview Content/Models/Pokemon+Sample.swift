@@ -14,6 +14,8 @@ extension Pokemon {
         height: 6,
         weight: 85,
         imageURL: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")!,
-        order: 5
+        order: 5,
+        types: [PokemonType(name: "normal")],
+        captureDate: Date()
     )
 }
