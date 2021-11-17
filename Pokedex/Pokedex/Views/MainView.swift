@@ -18,6 +18,7 @@ struct MainView: View {
                 Text("Search")
             }
             .tag(Tab.search)
+            
             NavigationView {
                 BackpackView(switchTabHandler: switchToSearchTab)
                     .navigationTitle("Backpack")

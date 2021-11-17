@@ -10,7 +10,7 @@ import SwiftUI
 struct BackpackView: View {
     @EnvironmentObject var backpackStore: BackpackStore
 
-    private let columns = [GridItem(.adaptive(minimum: 80))]
+    private let columns = [GridItem(.adaptive(minimum: PokemonListItem.frame.width))]
     let switchTabHandler: TapHandler
     
     var body: some View {
@@ -24,13 +24,11 @@ struct BackpackView: View {
                     }
             case let .loaded(pokemons):
                 ScrollView {
-                    LazyVGrid(
-                        columns: columns,
-                        spacing: 8) {
-                            ForEach(pokemons) { pokemon in
-                                PokemonListItem(pokemon: pokemon)
-                            }
+                    LazyVGrid(columns: columns, spacing: 8) {
+                        ForEach(pokemons) { pokemon in
+                            PokemonListItem(pokemon: pokemon)
                         }
+                    }
                 }
             case .failure:
                 // TODO: handle error
