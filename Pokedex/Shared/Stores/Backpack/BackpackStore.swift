@@ -15,7 +15,7 @@ final class BackpackStore: ObservableObject, BackpackStoring {
     func fetchCapturePokemonsList() {
         do {
             let capturedPokemons = try cacheManager.fetchPokemons()
-                .sorted(by: { $0.id < $1.id })
+                .sorted(by: { $0.order < $1.order })
             if capturedPokemons.isEmpty {
                 state = .empty
             } else {

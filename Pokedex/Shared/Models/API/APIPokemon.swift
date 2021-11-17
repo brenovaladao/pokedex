@@ -13,6 +13,7 @@ struct APIPokemon: Decodable {
     let height: Int
     let weight: Int
     let sprites: Sprite
+    let order: Int
 }
 
 extension APIPokemon {
@@ -22,7 +23,8 @@ extension APIPokemon {
             name: name,
             height: height,
             weight: weight,
-            imageURL: sprites.frontDefault
+            imageURL: sprites.frontDefault,
+            order: order
         )
     }
 }

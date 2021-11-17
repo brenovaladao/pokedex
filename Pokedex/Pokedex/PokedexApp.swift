@@ -18,8 +18,8 @@ struct PokedexApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
-            .environmentObject(searchStore)
-            .environmentObject(backpackStore)
+                .environmentObject(searchStore)
+                .environmentObject(backpackStore)
         }
     }
 }

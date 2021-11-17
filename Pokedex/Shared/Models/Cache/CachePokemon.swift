@@ -13,6 +13,7 @@ struct CachePokemon: Codable {
     let height: Int
     let weight: Int
     let imageURL: URL
+    let order: Int
     
     init(pokemon: Pokemon) {
         id = pokemon.id
@@ -20,6 +21,7 @@ struct CachePokemon: Codable {
         height = pokemon.height
         weight = pokemon.weight
         imageURL = pokemon.imageURL
+        order = pokemon.order
     }
     
     var pokemonValue: Pokemon {
@@ -28,7 +30,8 @@ struct CachePokemon: Codable {
             name: name,
             height: height,
             weight: weight,
-            imageURL: imageURL
+            imageURL: imageURL,
+            order: order
         )
     }
 }

@@ -13,6 +13,7 @@ struct Pokemon: Identifiable {
     let height: Int
     let weight: Int
     let imageURL: URL
+    let order: Int
     
     var displayName: String {
         name.capitalized
