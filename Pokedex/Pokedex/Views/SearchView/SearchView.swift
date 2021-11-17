@@ -25,7 +25,7 @@ struct SearchView: View {
                     PokemonInfoView(pokemon: pokemon)
 
                     HStack(alignment: .center, spacing: 8) {
-
+                        Spacer()
                         CaptureOptionView(
                             title: "Leave",
                             backgroundColor: .blue) {
@@ -38,6 +38,7 @@ struct SearchView: View {
                                     capturePokemon()
                                 }
                             }
+                        Spacer()
                     }
                 }
                 

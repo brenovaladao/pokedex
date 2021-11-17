@@ -13,6 +13,7 @@ extension Pokemon {
         name: "charmander",
         height: 6,
         weight: 85,
-        imageURL: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")!
+        imageURL: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")!,
+        order: 5
     )
 }
