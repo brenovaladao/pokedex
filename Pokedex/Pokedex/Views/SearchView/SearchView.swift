@@ -24,21 +24,19 @@ struct SearchView: View {
                 VStack {
                     PokemonInfoView(pokemon: pokemon)
 
-                    HStack(alignment: .center, spacing: 8) {
-                        Spacer()
+                    HStack(alignment: .center, spacing: 0) {
                         CaptureOptionView(
                             title: "Leave",
-                            backgroundColor: .blue) {
+                            backgroundColor: .secondaryButtonBackground) {
                                 leavePokemon()
                             }
                         CaptureOptionView(
                             title: isAlreadyCaptured ? "Already Captured" : "Catch!",
-                            backgroundColor: .red.opacity(isAlreadyCaptured ? 0.3: 1)) {
+                            backgroundColor: .mainButtonBackground.opacity(isAlreadyCaptured ? 0.3: 1)) {
                                 if !isAlreadyCaptured {
                                     capturePokemon()
                                 }
                             }
-                        Spacer()
                     }
                 }
                 

@@ -17,7 +17,7 @@ struct CaptureOptionView: View {
             Text(title)
                 .padding([.top, .bottom], 12)
                 .padding([.leading, .trailing], 22)
-                .foregroundColor(.white)
+                .foregroundColor(.buttonText)
                 .font(.buttonTitle)
         }
         .buttonStyle(
@@ -30,7 +30,7 @@ struct CaptureBar_Previews: PreviewProvider {
     static var previews: some View {
         CaptureOptionView(
             title: "Catch!",
-            backgroundColor: .red,
+            backgroundColor: .mainButtonBackground,
             onTap: {}
         )
     }
