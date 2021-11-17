@@ -17,9 +17,9 @@ struct PokemonInfoView: View {
             PokemonImage(url: pokemon.imageURL)
             
             VStack(alignment: .leading) {
-                Text("Name: \(pokemon.displayName)")
-                Text("Height: \(pokemon.displayHeightInCentimeters)")
-                Text("Weight: \(pokemon.displayWeightInKilos)")
+                InfoLabel(title: "Name", info: pokemon.displayName)
+                InfoLabel(title: "Weight", info: pokemon.displayWeightInKilos)
+                InfoLabel(title: "Height", info: pokemon.displayHeightInCentimeters)
             }
             
             Spacer()

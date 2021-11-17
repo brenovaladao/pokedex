@@ -15,6 +15,7 @@ extension Pokemon {
         weight: 85,
         imageURL: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")!,
         order: 5,
+        baseExperience: 2,
         types: [PokemonType(name: "normal")],
         captureDate: Date()
     )

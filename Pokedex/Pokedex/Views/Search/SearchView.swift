@@ -58,6 +58,8 @@ struct SearchView: View {
                     }
             }
         }
+        .navigationTitle("Pokémons Search")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

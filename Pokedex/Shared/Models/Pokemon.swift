@@ -42,4 +42,8 @@ struct Pokemon: Identifiable {
         }
         return DateFormatter.mediumDateTimeFormatter.string(from: captureDate)
     }
+    
+    var displayBaseExperiece: String {
+        "\(baseExperience) xp"
+    }
 }

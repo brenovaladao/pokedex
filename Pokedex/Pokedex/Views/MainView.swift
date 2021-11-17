@@ -12,7 +12,9 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            SearchView()
+            NavigationView {
+                SearchView()
+            }
             .tabItem {
                 Image(systemName: "magnifyingglass")
                 Text("Search")

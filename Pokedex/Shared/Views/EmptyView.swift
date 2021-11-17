@@ -15,6 +15,7 @@ struct EmptyView: View {
     var body: some View {
         VStack(spacing: 24) {
             Text(title)
+                .multilineTextAlignment(.center)
                 .font(.title2)
             Button(action: onTap) {
                 Text(buttonTitle)

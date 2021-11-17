@@ -15,13 +15,14 @@ struct PokemonDetail: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 8) {
                 PokemonImage(url: pokemon.imageURL)
-                Text("Name: \(pokemon.displayName)")
-                Text("Captured on: \(pokemon.diplayCaptureDate)")
-                Text("Weight: \(pokemon.displayWeightInKilos)")
-                Text("Height: \(pokemon.displayHeightInCentimeters)")
-                Text("Base experience: \(pokemon.baseExperience)")
-                Text("Types: \(pokemon.displayTypes)")
+                InfoLabel(title: "Name", info:pokemon.displayName)
+                InfoLabel(title: "Captured on", info:pokemon.diplayCaptureDate)
+                InfoLabel(title: "Weight", info:pokemon.displayWeightInKilos)
+                InfoLabel(title: "Height", info:pokemon.displayHeightInCentimeters)
+                InfoLabel(title: "Base experience", info:pokemon.displayBaseExperiece)
+                InfoLabel(title: "Types", info:pokemon.displayTypes)
             }
+            .padding()
         }
     }
 }
