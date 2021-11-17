@@ -18,6 +18,7 @@ struct CachePokemon: Codable {
     let weight: Int
     let imageURL: URL
     let order: Int
+    let baseExperience: Int
     let types: [CachePokemonType]
     let captureDate: Date
     
@@ -28,6 +29,7 @@ struct CachePokemon: Codable {
         weight = pokemon.weight
         imageURL = pokemon.imageURL
         order = pokemon.order
+        baseExperience = pokemon.baseExperience
         types = pokemon.types.map { CachePokemonType(name: $0.name) }
         self.captureDate = captureDate
     }
@@ -40,6 +42,7 @@ struct CachePokemon: Codable {
             weight: weight,
             imageURL: imageURL,
             order: order,
+            baseExperience: baseExperience,
             types: types.map { PokemonType(name: $0.name) },
             captureDate: captureDate
         )

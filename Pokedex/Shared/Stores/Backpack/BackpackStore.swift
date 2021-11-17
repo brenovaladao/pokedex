@@ -22,7 +22,6 @@ final class BackpackStore: ObservableObject, BackpackStoring {
                 state = .loaded(capturedPokemons.map(\.pokemonValue))
             }
         } catch {
-            print("error: \(error)")
             state = .failure(.errorFetchingCapturedPokemons)
         }
     }

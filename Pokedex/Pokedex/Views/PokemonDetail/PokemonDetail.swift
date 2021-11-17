@@ -16,10 +16,11 @@ struct PokemonDetail: View {
             VStack(alignment: .leading, spacing: 8) {
                 PokemonImage(url: pokemon.imageURL)
                 Text("Name: \(pokemon.displayName)")
-                Text("Height: \(pokemon.displayHeightInCentimeters)")
-                Text("Weight: \(pokemon.displayWeightInKilos)")
-                Text("Types: \(pokemon.displayTypes)")
                 Text("Captured on: \(pokemon.diplayCaptureDate)")
+                Text("Weight: \(pokemon.displayWeightInKilos)")
+                Text("Height: \(pokemon.displayHeightInCentimeters)")
+                Text("Base experience: \(pokemon.baseExperience)")
+                Text("Types: \(pokemon.displayTypes)")
             }
         }
     }

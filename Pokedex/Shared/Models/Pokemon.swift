@@ -14,6 +14,7 @@ struct Pokemon: Identifiable {
     let weight: Int
     let imageURL: URL
     let order: Int
+    let baseExperience: Int
     let types: [PokemonType]
     let captureDate: Date?
     

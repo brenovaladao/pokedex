@@ -27,6 +27,7 @@ extension APIPokemon {
             weight: weight,
             imageURL: sprites.frontDefault,
             order: order,
+            baseExperience: baseExperience,
             types: types.map { PokemonType(name: $0.name) },
             captureDate: nil
         )
