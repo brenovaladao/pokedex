@@ -29,6 +29,7 @@ final class BackpackStore: ObservableObject, BackpackStoring {
 }
 
 // MARK: - State
+
 extension BackpackStore {
     enum State {
         case empty
@@ -42,5 +43,19 @@ extension BackpackStore {
 extension BackpackStore {
     enum BackpackError: Error {
         case errorFetchingCapturedPokemons
+    
+        var errorDescription: String {
+            switch self {
+            case .errorFetchingCapturedPokemons:
+                return "An error happened while fetching captured pokémons."
+            }
+        }
+
+        var actionTitle: String {
+            switch self {
+            case .errorFetchingCapturedPokemons:
+                return "Try again"
+            }
+        }
     }
 }

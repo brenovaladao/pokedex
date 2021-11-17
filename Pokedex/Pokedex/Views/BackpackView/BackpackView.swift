@@ -32,11 +32,10 @@ struct BackpackView: View {
                         }
                     }
                 }
-            case .failure:
-                // TODO: handle error
+            case let .failure(error):
                 EmptyView(
-                    title: "Error",
-                    buttonTitle: "Try again") {
+                    title: error.errorDescription,
+                    buttonTitle: error.actionTitle) {
                         backpackStore.fetchCapturePokemonsList()
                     }
             }

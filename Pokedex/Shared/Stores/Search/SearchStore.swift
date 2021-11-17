@@ -76,6 +76,7 @@ final class SearchStore: ObservableObject, SearchStoring {
 }
 
 // MARK: - State
+
 extension SearchStore {
     enum State {
         case initial
@@ -133,6 +134,7 @@ extension SearchStore {
 }
 
 // MARK: - Constants
+
 private enum FileConstants {
     static let POKEMONS_IDS_RANGE = 1...1000
 }
