@@ -12,7 +12,7 @@ final class SearchStore: ObservableObject, SearchStoring {
     @Injected private var apiManager: APIManaging
     @Injected private var cacheManager: CacheManaging
     
-    @Published var state: State = .loaded(.sample, isAlreadyCaptured: true)
+    @Published var state: State = .initial
     
     private var cancellables = [AnyCancellable]()
 
