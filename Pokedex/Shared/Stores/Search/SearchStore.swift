@@ -17,6 +17,12 @@ final class SearchStore: ObservableObject, SearchStoring {
     private var cancellables = [AnyCancellable]()
 
     func fetchRandomPokemon() {
+        guard !state.isLoading else {
+            return
+        }
+        
+        state = .loading
+        
         let pokemonId = generateRandomPokemonId
         let searchPokemonUrl = Configuration.default.apiBaseURL.appendingPathComponent("pokemon/\(pokemonId)")
                 
@@ -65,9 +71,17 @@ final class SearchStore: ObservableObject, SearchStoring {
 extension SearchStore {
     enum State {
         case initial
+        case loading
         case loaded(Pokemon, isAlreadyCaptured: Bool)
         case captured(Pokemon)
         case failure(SearchError)
+        
+        var isLoading: Bool {
+            if case .loading = self {
+                return true
+            }
+            return false
+        }
     }
 }
 

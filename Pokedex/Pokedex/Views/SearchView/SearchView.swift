@@ -19,6 +19,9 @@ struct SearchView: View {
                     buttonTitle: "Search for a Pokémon") {
                         fetchRamdonPokemon()
                     }
+            case .loading:
+                ProgressView("Loading...")
+                    .foregroundColor(.text)
                 
             case let .loaded(pokemon, isAlreadyCaptured):
                 VStack {

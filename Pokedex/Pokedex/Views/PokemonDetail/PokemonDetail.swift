@@ -12,13 +12,15 @@ struct PokemonDetail: View {
     let pokemon: Pokemon
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            PokemonImage(url: pokemon.imageURL)
-            Text("Name: \(pokemon.displayName)")
-            Text("Height: \(pokemon.displayHeightInCentimeters)")
-            Text("Weight: \(pokemon.displayWeightInKilos)")
-            Text("Types: \(pokemon.displayTypes)")
-            Text("Captured on: \(pokemon.diplayCaptureDate)")
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
+                PokemonImage(url: pokemon.imageURL)
+                Text("Name: \(pokemon.displayName)")
+                Text("Height: \(pokemon.displayHeightInCentimeters)")
+                Text("Weight: \(pokemon.displayWeightInKilos)")
+                Text("Types: \(pokemon.displayTypes)")
+                Text("Captured on: \(pokemon.diplayCaptureDate)")
+            }
         }
     }
 }
