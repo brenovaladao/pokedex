@@ -19,11 +19,11 @@ struct EmptyView: View {
             Button(action: onTap) {
                 Text(buttonTitle)
                     .padding()
-                    .foregroundColor(.white)
+                    .foregroundColor(.buttonText)
                     .font(.buttonTitle)
             }
             .buttonStyle(
-                FilledButtonStyle(backgroundColor: .blue)
+                FilledButtonStyle(backgroundColor: .mainButtonBackground)
             )
         }
     }
@@ -32,9 +32,15 @@ struct EmptyView: View {
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyView(
-            title: "Seach Pokémons",
+            title: "Search Pokémons",
             buttonTitle: "Search",
             onTap: {}
         )
+        EmptyView(
+            title: "Search Pokémons",
+            buttonTitle: "Search",
+            onTap: {}
+        )
+        .preferredColorScheme(.dark)
     }
 }
