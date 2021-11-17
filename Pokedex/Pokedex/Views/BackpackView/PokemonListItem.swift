@@ -18,7 +18,6 @@ struct PokemonListItem: View {
                 frameRatio: 80
             )
             Text(pokemon.displayName)
-                .bold()
                 .padding([.trailing, .leading, .bottom], 8)
                 .foregroundColor(.text)
                 .lineLimit(1)

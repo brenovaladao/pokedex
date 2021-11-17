@@ -50,11 +50,10 @@ struct SearchView: View {
                         pokemonCapturedConfirmAction()
                     })
                 
-            case .failure:
-                // TODO: handle error
+            case let .failure(error):
                 EmptyView(
-                    title: "No Pokémon found",
-                    buttonTitle: "Try again") {
+                    title: error.errorDescription,
+                    buttonTitle: error.actionTitle) {
                         fetchRamdonPokemon()
                     }
             }

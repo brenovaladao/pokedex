@@ -39,7 +39,15 @@ final class SearchStore: ObservableObject, SearchStoring {
                 )
             }
             .catch { error -> AnyPublisher<State, Never> in
-                Just(.failure(.errorRetrievingRandomPokemon))
+                // This is defenitely not the best way to track reachability, but I don't
+                // want to add 3rd party library right now and I was trying a solution using
+                // `NWPathMonitor` but it didn't work as expected. So, right now we're
+                // only displaying the correct error message based on the HTTP error status.
+                if (error as NSError).code == -1020 {
+                    return Just(.failure(.noInternetConnection))
+                        .eraseToAnyPublisher()
+                }
+                return Just(.failure(.errorRetrievingRandomPokemon))
                     .eraseToAnyPublisher()
             }
             .assign(to: \.state, on: self)
@@ -96,9 +104,31 @@ private extension SearchStore {
 // MARK: - SearchError
 
 extension SearchStore {
-    enum SearchError: Error {
+    enum SearchError: LocalizedError {
         case errorRetrievingRandomPokemon
         case errorCapturingPokemon
+        case noInternetConnection
+        
+        var errorDescription: String {
+            switch self {
+            case .errorCapturingPokemon:
+                return "An error happened when capturing the pokemon."
+            case .errorRetrievingRandomPokemon:
+                return "An error happened when fetching the pokemon."
+            case .noInternetConnection:
+                return "No internet connection."
+            }
+        }
+        
+        var actionTitle: String {
+            switch self {
+            case .errorCapturingPokemon:
+                return "OK"
+            case .errorRetrievingRandomPokemon,
+                 .noInternetConnection:
+                return "Try again"
+            }
+        }
     }
 }
 

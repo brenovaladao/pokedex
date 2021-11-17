@@ -21,6 +21,7 @@ struct PokemonImage: View {
             image.resizable()
         } placeholder: {
             Text("...")
+                .foregroundColor(.text)
         }
         .frame(width: frameRatio, height: frameRatio)
     }
