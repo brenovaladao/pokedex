@@ -17,6 +17,8 @@ struct PokemonDetail: View {
             Text("Name: \(pokemon.displayName)")
             Text("Height: \(pokemon.displayHeightInCentimeters)")
             Text("Weight: \(pokemon.displayWeightInKilos)")
+            Text("Types: \(pokemon.displayTypes)")
+            Text("Captured on: \(pokemon.diplayCaptureDate)")
         }
     }
 }

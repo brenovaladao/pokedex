@@ -30,4 +30,15 @@ struct Pokemon: Identifiable {
     var displayWeightInKilos: String {
         "\(weight / 10) kg"
     }
+    
+    var displayTypes: String {
+        types.map { $0.name.capitalized }.joined(separator: ", ")
+    }
+    
+    var diplayCaptureDate: String {
+        guard let captureDate = captureDate else {
+            return "--"
+        }
+        return DateFormatter.mediumDateTimeFormatter.string(from: captureDate)
+    }
 }
