@@ -38,6 +38,7 @@
 		4040B924274118AC0000A8B4 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B923274118AC0000A8B4 /* Injected.swift */; };
 		4040B92727411A520000A8B4 /* APISprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92627411A520000A8B4 /* APISprite.swift */; };
 		4040B92C27411EED0000A8B4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92B27411EED0000A8B4 /* Configuration.swift */; };
+		40E7285727450C4900C2D19C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7285627450C4900C2D19C /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		4040B92627411A520000A8B4 /* APISprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISprite.swift; sourceTree = "<group>"; };
 		4040B92A27411E4D0000A8B4 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		4040B92B27411EED0000A8B4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		40E7285627450C4900C2D19C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4040B8F8274111C30000A8B4 /* Assets.xcassets */,
+				40E7285627450C4900C2D19C /* Color.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				4036E89C2741301900A667B8 /* PokemonInfoView.swift in Sources */,
 				4036E8C3274160FD00A667B8 /* PokemonListItem.swift in Sources */,
 				4040B91D274118320000A8B4 /* APIPokemon.swift in Sources */,
+				40E7285727450C4900C2D19C /* Color.swift in Sources */,
 				4040B8F5274111C20000A8B4 /* PokedexApp.swift in Sources */,
 				4040B910274117070000A8B4 /* SearchStore.swift in Sources */,
 				4036E89F274136E900A667B8 /* CaptureOptionView.swift in Sources */,
