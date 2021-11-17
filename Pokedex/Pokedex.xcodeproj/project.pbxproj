@@ -38,6 +38,7 @@
 		4040B924274118AC0000A8B4 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B923274118AC0000A8B4 /* Injected.swift */; };
 		4040B92727411A520000A8B4 /* APISprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92627411A520000A8B4 /* APISprite.swift */; };
 		4040B92C27411EED0000A8B4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92B27411EED0000A8B4 /* Configuration.swift */; };
+		404697152745173C004B06C9 /* PokemonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404697142745173C004B06C9 /* PokemonImage.swift */; };
 		40E7285727450C4900C2D19C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7285627450C4900C2D19C /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		4040B92627411A520000A8B4 /* APISprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISprite.swift; sourceTree = "<group>"; };
 		4040B92A27411E4D0000A8B4 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		4040B92B27411EED0000A8B4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		404697142745173C004B06C9 /* PokemonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonImage.swift; sourceTree = "<group>"; };
 		40E7285627450C4900C2D19C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				4036E8A12741379900A667B8 /* Styles */,
 				4036E8AE27414FC200A667B8 /* EmptyView.swift */,
 				4036E89B2741301900A667B8 /* PokemonInfoView.swift */,
+				404697142745173C004B06C9 /* PokemonImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				4040B8F5274111C20000A8B4 /* PokedexApp.swift in Sources */,
 				4040B910274117070000A8B4 /* SearchStore.swift in Sources */,
 				4036E89F274136E900A667B8 /* CaptureOptionView.swift in Sources */,
+				404697152745173C004B06C9 /* PokemonImage.swift in Sources */,
 				4036E8A3274137B000A667B8 /* FilledButtonStyle.swift in Sources */,
 				4040B924274118AC0000A8B4 /* Injected.swift in Sources */,
 				4040B92727411A520000A8B4 /* APISprite.swift in Sources */,

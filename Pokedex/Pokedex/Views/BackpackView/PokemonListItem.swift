@@ -12,18 +12,16 @@ struct PokemonListItem: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            AsyncImage(url: pokemon.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Text("...")
-            }
-            .frame(width: 80, height: 80)
             
+            PokemonImage(
+                url: pokemon.imageURL,
+                frameRatio: 80
+            )
             Text(pokemon.displayName)
                 .padding([.trailing, .leading, .bottom], 8)
-                .foregroundColor(.white)
+                .foregroundColor(.text)
         }
-        .background(.gray)
+        .background(Color.itemBackground)
         .cornerRadius(8)
     }
 }

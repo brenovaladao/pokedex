@@ -16,13 +16,8 @@ struct PokemonCapturedView: View {
             Text("\(pokemon.displayName) captured!")
                 .font(.title)
             
-            AsyncImage(url: pokemon.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Text("...")
-            }
-            .frame(width: 130, height: 130)
-            .padding()
+            PokemonImage(url: pokemon.imageURL)
+                .padding()
             
             Button(action: onTap) {
                 Text("OK")
@@ -32,7 +27,7 @@ struct PokemonCapturedView: View {
                     .font(.buttonTitle)
             }
             .buttonStyle(
-                FilledButtonStyle(backgroundColor: .blue)
+                FilledButtonStyle(backgroundColor: .mainButtonBackground)
             )
         }
     }

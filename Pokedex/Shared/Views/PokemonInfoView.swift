@@ -12,18 +12,17 @@ struct PokemonInfoView: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: pokemon.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Text("...")
-            }
-            .frame(width: 130, height: 130)
+            Spacer()
+            
+            PokemonImage(url: pokemon.imageURL)
             
             VStack(alignment: .leading) {
                 Text("Name: \(pokemon.displayName)")
                 Text("Height: \(pokemon.displayHeightInCentimeters)")
                 Text("Weight: \(pokemon.displayWeightInKilos)")
             }
+            
+            Spacer()
         }
         .padding(8)
     }
