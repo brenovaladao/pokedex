@@ -8,12 +8,6 @@
 import Combine
 import Foundation
 
-protocol APIManaging {
-    var decoder: JSONDecoder { get }
-
-    func fetch(url: URL) -> AnyPublisher<Data, Error>
-}
-
 final class APIManager: APIManaging {
     
     private lazy var urlSession: URLSession = {

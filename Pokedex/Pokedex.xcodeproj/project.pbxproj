@@ -43,6 +43,7 @@
 		4046971C274529F2004B06C9 /* APIPokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046971B274529F2004B06C9 /* APIPokemonType.swift */; };
 		4046971E27452D2C004B06C9 /* PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046971D27452D2C004B06C9 /* PokemonType.swift */; };
 		4046972027453007004B06C9 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046971F27453007004B06C9 /* DateFormatter.swift */; };
+		40469722274546BB004B06C9 /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40469721274546BB004B06C9 /* APIManaging.swift */; };
 		40E7285727450C4900C2D19C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7285627450C4900C2D19C /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		4046971B274529F2004B06C9 /* APIPokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPokemonType.swift; sourceTree = "<group>"; };
 		4046971D27452D2C004B06C9 /* PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonType.swift; sourceTree = "<group>"; };
 		4046971F27453007004B06C9 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		40469721274546BB004B06C9 /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
 		40E7285627450C4900C2D19C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +269,7 @@
 		4040B908274115230000A8B4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				40469721274546BB004B06C9 /* APIManaging.swift */,
 				4040B909274115320000A8B4 /* APIManager.swift */,
 				4040B90B274115A50000A8B4 /* APIError.swift */,
 			);
@@ -438,6 +441,7 @@
 				4036E8B8274155A000A667B8 /* CacheManaging.swift in Sources */,
 				4040B91F274118460000A8B4 /* Pokemon.swift in Sources */,
 				4036E89427412ABE00A667B8 /* MainView.swift in Sources */,
+				40469722274546BB004B06C9 /* APIManaging.swift in Sources */,
 				4040B8F7274111C20000A8B4 /* SearchView.swift in Sources */,
 				4036E89C2741301900A667B8 /* PokemonInfoView.swift in Sources */,
 				4036E8C3274160FD00A667B8 /* PokemonListItem.swift in Sources */,
