@@ -16,7 +16,7 @@ struct SearchView: View {
             case .initial:
                 EmptyView(
                     title: "Let's find them all!",
-                    buttonTitle: "Search for Pokémon") {
+                    buttonTitle: "Search for a Pokémon") {
                         fetchRamdonPokemon()
                     }
                 

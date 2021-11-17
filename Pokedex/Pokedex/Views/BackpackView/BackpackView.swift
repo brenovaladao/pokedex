@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BackpackView: View {
     @EnvironmentObject var backpackStore: BackpackStore
-
+    
     private let columns = [GridItem(.adaptive(minimum: PokemonListItem.frame.width))]
     let switchTabHandler: TapHandler
     
@@ -26,7 +26,9 @@ struct BackpackView: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 8) {
                         ForEach(pokemons) { pokemon in
-                            PokemonListItem(pokemon: pokemon)
+                            NavigationLink(destination: PokemonDetail(pokemon: pokemon)) {
+                                PokemonListItem(pokemon: pokemon)
+                            }
                         }
                     }
                 }
@@ -42,12 +44,14 @@ struct BackpackView: View {
         .onAppear {
             backpackStore.fetchCapturePokemonsList()
         }
+        .navigationTitle("Backpack")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 // MARK: - Actions
 
-extension BackpackView {
+private extension BackpackView {
     func navigateToSearchPokemonsView() {
         switchTabHandler()
     }

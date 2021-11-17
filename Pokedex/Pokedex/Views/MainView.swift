@@ -21,8 +21,6 @@ struct MainView: View {
             
             NavigationView {
                 BackpackView(switchTabHandler: switchToSearchTab)
-                    .navigationTitle("Backpack")
-                    .navigationBarTitleDisplayMode(.inline)
             }
             .tabItem {
                 Image(systemName: "bag")
