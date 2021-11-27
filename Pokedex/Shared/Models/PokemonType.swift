@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct PokemonType {
-    let name: String
+public struct PokemonType {
+    public let name: String
 }

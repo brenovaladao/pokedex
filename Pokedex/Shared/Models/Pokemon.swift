@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct Pokemon: Identifiable {
-    let id: Int
-    let name: String
-    let height: Int
-    let weight: Int
-    let imageURL: URL
-    let order: Int
-    let baseExperience: Int
-    let types: [PokemonType]
-    let captureDate: Date?
+public struct Pokemon: Identifiable {
+    public let id: Int
+    public let name: String
+    public let height: Int
+    public let weight: Int
+    public let imageURL: URL
+    public let order: Int
+    public let baseExperience: Int
+    public let types: [PokemonType]
+    public let captureDate: Date?
     
     var displayName: String {
         name.capitalized

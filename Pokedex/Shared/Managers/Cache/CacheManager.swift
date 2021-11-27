@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CacheManager: CacheManaging {
+final public class CacheManager: CacheManaging {
     
     private let userDefaults: UserDefaults
     private var cachedPokemons = [CachePokemon]()
@@ -15,12 +15,12 @@ final class CacheManager: CacheManaging {
     private lazy var decoder = JSONDecoder()
     private lazy var encoder = JSONEncoder()
 
-    init(userDefaults: UserDefaults) {
+    public init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
         cachedPokemons = (try? fetchPokemons()) ?? []
     }
     
-    func savePokemon(_ pokemon: CachePokemon) throws {
+    public func savePokemon(_ pokemon: CachePokemon) throws {
         cachedPokemons.append(pokemon)
         
         guard let data = try? encoder.encode(cachedPokemons) else {
@@ -31,7 +31,7 @@ final class CacheManager: CacheManaging {
         userDefaults.synchronize()
     }
     
-    func fetchPokemons() throws -> [CachePokemon] {
+    public func fetchPokemons() throws -> [CachePokemon] {
         guard let data = userDefaults.value(forKey: Configuration.default.capturedPokemonsCacheKey) as? Data else {
             return []
         }
@@ -42,7 +42,7 @@ final class CacheManager: CacheManaging {
         return cachedPokemons
     }
     
-    func pokemonAlreadyCaptured(pokemonId: Int) -> Bool {
+    public func pokemonAlreadyCaptured(pokemonId: Int) -> Bool {
         cachedPokemons
             .map(\.id)
             .contains(pokemonId)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIPokemon: Decodable {
+public struct APIPokemon: Decodable {
     let id: Int
     let name: String
     let height: Int
@@ -18,7 +18,7 @@ struct APIPokemon: Decodable {
     let types: [APIPokemonType]
 }
 
-extension APIPokemon {
+public extension APIPokemon {
     var pokemonValue: Pokemon {
         Pokemon(
             id: id,

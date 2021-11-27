@@ -7,7 +7,10 @@
 
 import Foundation
 
-protocol CacheManaging: AnyObject {
+public protocol CacheManaging: AnyObject {
+    
+    init(userDefaults: UserDefaults)
+    
     func savePokemon(_ pokemon: CachePokemon) throws
     
     func fetchPokemons() throws -> [CachePokemon]

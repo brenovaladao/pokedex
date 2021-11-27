@@ -7,22 +7,22 @@
 
 import Foundation
 
-struct CachePokemon: Codable {
-    struct CachePokemonType: Codable {
+public struct CachePokemon: Codable, Equatable {
+    public struct CachePokemonType: Codable, Equatable {
         let name: String
     }
     
-    let id: Int
-    let name: String
-    let height: Int
-    let weight: Int
-    let imageURL: URL
-    let order: Int
-    let baseExperience: Int
-    let types: [CachePokemonType]
-    let captureDate: Date
+    public let id: Int
+    public let name: String
+    public let height: Int
+    public let weight: Int
+    public let imageURL: URL
+    public let order: Int
+    public let baseExperience: Int
+    public let types: [CachePokemonType]
+    public let captureDate: Date
     
-    init(pokemon: Pokemon, captureDate: Date) {
+    public init(pokemon: Pokemon, captureDate: Date) {
         id = pokemon.id
         name = pokemon.name
         height = pokemon.height

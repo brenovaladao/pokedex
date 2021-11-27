@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CacheError: Error, LocalizedError {
+public enum CacheError: Error, LocalizedError {
     case decoding
     case encoding
 }
