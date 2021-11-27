@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol BackpackStoring {
+public protocol BackpackStoring {
     func fetchCapturePokemonsList()
 }

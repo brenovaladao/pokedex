@@ -34,7 +34,7 @@ public struct CachePokemon: Codable, Equatable {
         self.captureDate = captureDate
     }
     
-    var pokemonValue: Pokemon {
+    public var pokemonValue: Pokemon {
         Pokemon(
             id: id,
             name: name,

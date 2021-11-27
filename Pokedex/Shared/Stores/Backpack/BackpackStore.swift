@@ -8,11 +8,15 @@
 import Foundation
 import Combine
 
-final class BackpackStore: ObservableObject, BackpackStoring {
+final public class BackpackStore: ObservableObject, BackpackStoring {
     @Injected private var cacheManager: CacheManaging
-    @Published var state: State = .empty
+    @Published public var state: State
 
-    func fetchCapturePokemonsList() {
+    public init() {
+        self.state = .empty
+    }
+    
+    public func fetchCapturePokemonsList() {
         do {
             let capturedPokemons = try cacheManager.fetchPokemons()
                 .sorted(by: { $0.order < $1.order })
@@ -29,7 +33,7 @@ final class BackpackStore: ObservableObject, BackpackStoring {
 
 // MARK: - State
 
-extension BackpackStore {
+public extension BackpackStore {
     enum State {
         case empty
         case loaded([Pokemon])
@@ -39,7 +43,7 @@ extension BackpackStore {
 
 // MARK: - SearchError
 
-extension BackpackStore {
+public extension BackpackStore {
     enum BackpackError: Error {
         case errorFetchingCapturedPokemons
     

@@ -11,19 +11,20 @@ import Pokedex
 enum PokemonsFactory {
     static private let jsonLoader = JSONLoader()
     
-    static func getAPIPokemonsFromLocalJSON() -> [APIPokemon] {
-        let apiPokemons = jsonLoader.decodeFromLocalJSON(objectType: [APIPokemon].self, fileName: "pokemons_array")
+    static func getAPIPokemonsFromLocalJSON(sorted: Bool = true) -> [APIPokemon] {
+        let fileName = sorted ? "pokemons_array_sorted" : "pokemons_array_unsorted"
+        let apiPokemons = jsonLoader.decodeFromLocalJSON(objectType: [APIPokemon].self, fileName: fileName)
         return apiPokemons
     }
     
-    static func getCachePokemonsFromLocalJSON(captureDate: Date) -> [CachePokemon] {
-        getPokemonsFromLocalJSON().map {
+    static func getCachePokemonsFromLocalJSON(sorted: Bool = true, captureDate: Date) -> [CachePokemon] {
+        getPokemonsFromLocalJSON(sorted: sorted).map {
             CachePokemon(pokemon: $0, captureDate: captureDate)
         }
     }
     
-    static func getPokemonsFromLocalJSON() -> [Pokemon] {
-        getAPIPokemonsFromLocalJSON().map(\.pokemonValue)
+    static func getPokemonsFromLocalJSON(sorted: Bool = true) -> [Pokemon] {
+        getAPIPokemonsFromLocalJSON(sorted: sorted).map(\.pokemonValue)
     }
     
     static func getPokemonFromLocalJSON() -> Pokemon {
