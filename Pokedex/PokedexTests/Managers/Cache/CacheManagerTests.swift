@@ -16,30 +16,48 @@ class CacheManagerTests: XCTestCase {
         userDefaults.clearAllKeys()
     }
     
-    func testSavePokemonWithSuccess() {
+    func test_savePokemonsThenFetchWithSuccess() throws {
         let sut = makeSUT()
         let captureDate = Date()
-        let cachePokemon = makeCachePokemon(captureDate: captureDate)
+        let mockPokemons = makeCachePokemons(captureDate: captureDate)
         
-        do {
-            let initialPokemons = try sut.fetchPokemons()
-            XCTAssertTrue(initialPokemons.isEmpty)
-        } catch {
-            XCTFail("Can't load cached pokemons \(error)")
-        }
+        let initialPokemons = try sut.fetchPokemons()
+        XCTAssertTrue(initialPokemons.isEmpty)
         
-        do {
-            try sut.savePokemon(cachePokemon)
-        } catch {
-            XCTFail("Can't save pokemon \(error)")
+        try mockPokemons.forEach {
+            try sut.savePokemon($0)
         }
 
-        do {
-            let pokemons = try sut.fetchPokemons()
-            XCTAssert(pokemons == [cachePokemon])
-        } catch {
-            XCTFail("Error fetching pokemons \(error)")
+        let pokemons = try sut.fetchPokemons()
+        XCTAssert(pokemons == mockPokemons)
+    }
+    
+    func test_checkIfPokemonWasAlreadyPersistedWithEmptyCache() throws {
+        let sut = makeSUT()
+        let captureDate = Date()
+        let mockPokemon = makeCachePokemons(captureDate: captureDate).first!
+
+        let initialPokemons = try sut.fetchPokemons()
+        XCTAssertTrue(initialPokemons.isEmpty)
+
+        let alreadyCaptured = sut.pokemonAlreadyCaptured(pokemonId: mockPokemon.id)
+        XCTAssertFalse(alreadyCaptured, "This Pokémon has not been captured yet")
+    }
+    
+    func test_checkIfPokemonWasAlreadyPersistedWithCache() throws {
+        let sut = makeSUT()
+        let captureDate = Date()
+        let mockPokemons = makeCachePokemons(captureDate: captureDate)
+
+        let initialPokemons = try sut.fetchPokemons()
+        XCTAssertTrue(initialPokemons.isEmpty)
+
+        try mockPokemons.forEach {
+            try sut.savePokemon($0)
         }
+
+        let alreadyCaptured = sut.pokemonAlreadyCaptured(pokemonId: mockPokemons.first!.id)
+        XCTAssertTrue(alreadyCaptured, "This Pokemon has already been captured")
     }
     
     // MARK: - Factories
@@ -49,7 +67,7 @@ class CacheManagerTests: XCTestCase {
         return cacheManager
     }
     
-    func makeCachePokemon(captureDate: Date) -> CachePokemon {
-        PokemonsFactory.getCachePokemonsFromLocalJSON(captureDate: captureDate).first!
+    func makeCachePokemons(captureDate: Date) -> [CachePokemon] {
+        PokemonsFactory.getCachePokemonsFromLocalJSON(captureDate: captureDate)
     }
 }
