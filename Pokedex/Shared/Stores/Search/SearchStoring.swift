@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SearchStoring {
+public protocol SearchStoring {
     func fetchRandomPokemon()
     
     func setInitialState()

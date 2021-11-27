@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol APIManaging {
+public protocol APIManaging {
     var decoder: JSONDecoder { get }
 
     func fetch(url: URL) -> AnyPublisher<Data, Error>

@@ -7,19 +7,19 @@
 
 import Foundation
 
-final class DIContainer {
+final public class DIContainer {
     typealias Resolver = () -> Any
 
     private var resolvers = [String: Resolver]()
     private var cache = [String: Any]()
 
-    static let shared = DIContainer()
+    public static let shared = DIContainer()
 
     init() {
         registerDependencies()
     }
 
-    func register<T, R>(_ type: T.Type, cached: Bool = false, service: @escaping () -> R) {
+    public func register<T, R>(_ type: T.Type, cached: Bool = false, service: @escaping () -> R) {
         let key = String(reflecting: type)
         resolvers[key] = service
 

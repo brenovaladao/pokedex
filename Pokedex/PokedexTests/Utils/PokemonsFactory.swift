@@ -12,7 +12,7 @@ enum PokemonsFactory {
     static private let jsonLoader = JSONLoader()
     
     static func getAPIPokemonsFromLocalJSON() -> [APIPokemon] {
-        let apiPokemons = jsonLoader.decodeFromLocalJSON(objectType: [APIPokemon].self, from: "pokemons")
+        let apiPokemons = jsonLoader.decodeFromLocalJSON(objectType: [APIPokemon].self, fileName: "pokemons_array")
         return apiPokemons
     }
     
@@ -24,5 +24,10 @@ enum PokemonsFactory {
     
     static func getPokemonsFromLocalJSON() -> [Pokemon] {
         getAPIPokemonsFromLocalJSON().map(\.pokemonValue)
+    }
+    
+    static func getPokemonFromLocalJSON() -> Pokemon {
+        jsonLoader.decodeFromLocalJSON(objectType: APIPokemon.self, fileName: "pokemon")
+            .pokemonValue
     }
 }

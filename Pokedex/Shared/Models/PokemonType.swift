@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct PokemonType {
+public struct PokemonType: Equatable {
     public let name: String
 }

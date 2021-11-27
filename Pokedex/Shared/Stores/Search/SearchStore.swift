@@ -8,15 +8,20 @@
 import Foundation
 import Combine
 
-final class SearchStore: ObservableObject, SearchStoring {
+final public class SearchStore: ObservableObject, SearchStoring {
     @Injected private var apiManager: APIManaging
     @Injected private var cacheManager: CacheManaging
     
-    @Published var state: State = .initial
+    @Published public var state: State
     
-    private var cancellables = [AnyCancellable]()
+    private var cancellables: [AnyCancellable]
 
-    func fetchRandomPokemon() {
+    public init() {
+        state = .initial
+        cancellables = []
+    }
+    
+    public func fetchRandomPokemon() {
         guard !state.isLoading else {
             return
         }
@@ -54,12 +59,15 @@ final class SearchStore: ObservableObject, SearchStoring {
             .store(in: &cancellables)
     }
     
-    func setInitialState() {
+    public func setInitialState() {
         state = .initial
     }
     
-    func captureCurrentPokemon() {
-        guard case let .loaded(pokemon, _) = state else {
+    public func captureCurrentPokemon() {
+        guard
+            case let .loaded(pokemon, isAlreadyCaptured) = state,
+            !isAlreadyCaptured
+        else {
             return
         }
         
@@ -77,7 +85,7 @@ final class SearchStore: ObservableObject, SearchStoring {
 
 // MARK: - State
 
-extension SearchStore {
+public extension SearchStore {
     enum State {
         case initial
         case loading
@@ -104,7 +112,7 @@ private extension SearchStore {
 
 // MARK: - SearchError
 
-extension SearchStore {
+public extension SearchStore {
     enum SearchError: LocalizedError {
         case errorRetrievingRandomPokemon
         case errorCapturingPokemon

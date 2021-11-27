@@ -12,7 +12,7 @@ class CacheManagerTests: XCTestCase {
     
     let userDefaults = UserDefaults(suiteName: "pokemon.tests.suite.name")!
 
-    override func setUpWithError() throws {
+    override func setUp() {
         userDefaults.clearAllKeys()
     }
     
