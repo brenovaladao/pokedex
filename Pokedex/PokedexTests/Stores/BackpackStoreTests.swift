@@ -10,6 +10,7 @@ import Pokedex
 import Combine
 
 class BackpackStoreTests: XCTestCase {
+    
     let userDefaults = UserDefaults(suiteName: "pokemon.tests.suite.name")!
     let cancellables = [AnyCancellable]()
     let jsonLoader = JSONLoader()

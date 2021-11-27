@@ -9,6 +9,7 @@ import Foundation
 import Pokedex
 
 enum PokemonsFactory {
+    
     static private let jsonLoader = JSONLoader()
     
     static func getAPIPokemonsFromLocalJSON(sorted: Bool = true) -> [APIPokemon] {

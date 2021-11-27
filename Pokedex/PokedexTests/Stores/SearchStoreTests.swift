@@ -10,13 +10,13 @@ import Pokedex
 import Combine
 
 class SearchStoreTests: XCTestCase {
-    
+
     typealias SearchError = SearchStore.SearchError
     
     let userDefaults = UserDefaults(suiteName: "pokemon.tests.suite.name")!
-    private var cancellables = [AnyCancellable]()
-    private var jsonLoader = JSONLoader()
-    
+    let jsonLoader = JSONLoader()
+    var cancellables = [AnyCancellable]()
+
     override func setUp() {
         userDefaults.clearAllKeys()
     }

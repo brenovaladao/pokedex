@@ -455,8 +455,8 @@
 		40C7B6D42752617D000F0B24 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				40C7B6C32752489C000F0B24 /* pokemons_array_sorted.json */,
 				40C7B6D9275265C8000F0B24 /* pokemon.json */,
+				40C7B6C32752489C000F0B24 /* pokemons_array_sorted.json */,
 				40C7B6DE275283DA000F0B24 /* pokemons_array_unsorted.json */,
 			);
 			path = JSON;

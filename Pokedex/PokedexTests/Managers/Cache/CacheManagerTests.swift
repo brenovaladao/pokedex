@@ -34,8 +34,8 @@ class CacheManagerTests: XCTestCase {
     
     func test_fetchCachedPokemonsWithFailure() throws {
         let sut = makeSUT()
-        
         let initialPokemons = try sut.fetchPokemons()
+
         XCTAssertTrue(initialPokemons.isEmpty)
         
         let invalidPokemonData = Data()
