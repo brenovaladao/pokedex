@@ -51,6 +51,7 @@
 		40C7B6C727524B37000F0B24 /* pokemons.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C7B6C32752489C000F0B24 /* pokemons.json */; };
 		40C7B6C927524CBB000F0B24 /* PokemonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7B6C827524CBB000F0B24 /* PokemonsFactory.swift */; };
 		40C7B6CD275250D9000F0B24 /* UserDefaults+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7B6CA2752508C000F0B24 /* UserDefaults+Convenience.swift */; };
+		40C7B6CE27525A82000F0B24 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040B92B27411EED0000A8B4 /* Configuration.swift */; };
 		40E7285727450C4900C2D19C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7285627450C4900C2D19C /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		40C7B6C527524930000F0B24 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 		40C7B6C827524CBB000F0B24 /* PokemonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsFactory.swift; sourceTree = "<group>"; };
 		40C7B6CA2752508C000F0B24 /* UserDefaults+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Convenience.swift"; sourceTree = "<group>"; };
+		40C7B6CF27525B0F000F0B24 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		40E7285627450C4900C2D19C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				40C7B6C227524883000F0B24 /* JSONMocks */,
 				40C7B6B627519491000F0B24 /* Models */,
 				40C7B6AF2751932A000F0B24 /* Managers */,
+				40C7B6CF27525B0F000F0B24 /* info.plist */,
 			);
 			path = PokedexTests;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C7B6CE27525A82000F0B24 /* Configuration.swift in Sources */,
 				40C7B6C927524CBB000F0B24 /* PokemonsFactory.swift in Sources */,
 				40C7B6B8275194A3000F0B24 /* APIPokemonTests.swift in Sources */,
 				40C7B6B227519352000F0B24 /* CacheManagerTests.swift in Sources */,
@@ -612,7 +616,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LS55K535D9;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PokedexTests/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -637,7 +642,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LS55K535D9;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PokedexTests/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
