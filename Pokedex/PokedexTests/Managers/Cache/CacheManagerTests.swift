@@ -32,6 +32,26 @@ class CacheManagerTests: XCTestCase {
         XCTAssert(pokemons == mockPokemons)
     }
     
+    func test_fetchCachedPokemonsWithFailure() throws {
+        let sut = makeSUT()
+        
+        let initialPokemons = try sut.fetchPokemons()
+        XCTAssertTrue(initialPokemons.isEmpty)
+        
+        let invalidPokemonData = Data()
+        userDefaults.set(invalidPokemonData, forKey: Configuration.default.capturedPokemonsCacheKey)
+
+        do {
+            _ = try sut.fetchPokemons()
+        } catch {
+            guard let cacheError = error as? CacheError else {
+                XCTFail("Unexpected error")
+                return
+            }
+            XCTAssert(cacheError == .decoding, "Expected decoding error")
+        }
+    }
+    
     func test_checkIfPokemonWasAlreadyPersistedWithEmptyCache() throws {
         let sut = makeSUT()
         let captureDate = Date()
