@@ -14,7 +14,7 @@ struct SearchView: View {
         Group {
             switch searchStore.state {
             case .initial:
-                EmptyView(
+                EmptyStateView(
                     title: "Let's find them all!",
                     buttonTitle: "Search for a Pokémon") {
                         fetchRamdonPokemon()
@@ -51,7 +51,7 @@ struct SearchView: View {
                     })
                 
             case let .failure(error):
-                EmptyView(
+                EmptyStateView(
                     title: error.errorDescription,
                     buttonTitle: error.actionTitle) {
                         fetchRamdonPokemon()

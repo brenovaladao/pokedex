@@ -14,7 +14,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40209A9027518CF10086990B"
+               BlueprintIdentifier = "40209AA5275192E00086990B"
                BuildableName = "PokedexTests.xctest"
                BlueprintName = "PokedexTests"
                ReferencedContainer = "container:Pokedex.xcodeproj">
@@ -24,15 +24,15 @@
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40209A9027518CF10086990B"
+               BlueprintIdentifier = "40209AA5275192E00086990B"
                BuildableName = "PokedexTests.xctest"
                BlueprintName = "PokedexTests"
                ReferencedContainer = "container:Pokedex.xcodeproj">

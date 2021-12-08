@@ -1,5 +1,5 @@
 //
-//  EmptyView.swift
+//  EmptyStateView.swift
 //  Pokedex
 //
 //  Created by Breno Valadão on 14/11/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmptyView: View {    
+struct EmptyStateView: View {    
     let title: String
     let buttonTitle: String
     var onTap: TapHandler
@@ -32,12 +32,12 @@ struct EmptyView: View {
 
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView(
+        EmptyStateView(
             title: "Search Pokémons",
             buttonTitle: "Search",
             onTap: {}
         )
-        EmptyView(
+        EmptyStateView(
             title: "Search Pokémons",
             buttonTitle: "Search",
             onTap: {}

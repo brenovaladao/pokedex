@@ -17,7 +17,7 @@ struct BackpackView: View {
         Group {
             switch backpackStore.state {
             case .empty:
-                EmptyView(
+                EmptyStateView(
                     title: "Your backpack is empty!",
                     buttonTitle: "Search Pokémons") {
                         navigateToSearchPokemonsView()
@@ -33,7 +33,7 @@ struct BackpackView: View {
                     }
                 }
             case let .failure(error):
-                EmptyView(
+                EmptyStateView(
                     title: error.errorDescription,
                     buttonTitle: error.actionTitle) {
                         backpackStore.fetchCapturePokemonsList()
