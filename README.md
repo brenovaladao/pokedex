@@ -1,5 +1,6 @@
-# Pokedex [![Build Status](https://app.travis-ci.com/brenovaladao/pokedex.svg?branch=main)](https://app.travis-ci.com/brenovaladao/pokedex)
+# Pokedex 
+![](https://github.com/brenovaladao/pokedex/workflows/CI/badge.svg)
 
 Pokédex App built in SwiftUI using [PokeApi v2](https://pokeapi.co/). 
 
-- Xcode 13.1
+- Xcode 13.2.1
