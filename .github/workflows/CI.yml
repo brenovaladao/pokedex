@@ -14,7 +14,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: macos-11
 
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -25,5 +25,4 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
       
     - name: Build and Test
-      run: xcodebuild test -project Pokedex/Pokedex.xcodeproj -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=15.0,name=iPhone 13" -enableCodeCoverage YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO SWIFT_TREAT_WARNINGS_AS_ERRORS=YES OTHER_SWIFT_FLAGS="-D ED_SKIP_SWIFT_FORMAT"
-
+      run: xcodebuild test -project Pokedex/Pokedex.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=15.2" ONLY_ACTIVE_ARCH=YES
